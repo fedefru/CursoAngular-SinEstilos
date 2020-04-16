@@ -1,0 +1,18 @@
+<div>
+    <div style="text-align: end;">{{fecha | date:'dd/MM/yy'}} - {{fecha | date:'fullDate' | lowercase}}</div>
+    <br>
+    <input type="text" [(ngModel)]="prendaGuardar">
+    
+    <button (click)="guardarPrenda(prendaGuardar)">Agregar prenda</button>
+    
+    <pre *ngIf="prendaGuardar">prenda a guardar {{prendaGuardar}}</pre>
+    
+    <h3>Listado de prendas</h3>
+    
+    <ul>
+        <li *ngFor="let prenda of listadoRopa;let i = index">{{i+1}} {{prenda}} 
+            <button (click)="eliminarPrenda(i)">Eliminar</button>
+        </li>
+        
+    </ul>
+</div>
